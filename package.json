@@ -11,9 +11,11 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.1",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.17.4",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "remask": "^0.1.0-alpha.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
