@@ -6,15 +6,18 @@ import { Link } from 'react-router-dom'
 import { mask, unMask } from 'remask'
 import Box from '../../components/Box'
 import apiCep from '../../services/apiCep'
+import AlunoService from '../../services/academico/AlunoService'
 import validador from '../../validators/AlunoValidator'
 
-const AlunosForm = () => {
+const AlunosForm = (props) => {
+
 
     const { register, handleSubmit, setValue, formState: {errors} } = useForm()
 
     function enviarDados(dados){
-        console.log(dados);
-    }    
+        AlunoService.create(dados)
+        props.history.push('/alunos')
+    }
 
     function handleChange(event){
         const name = event.target.name
@@ -140,7 +143,7 @@ const AlunosForm = () => {
                     </Form.Group>                    
                     <div className="text-center">
                         <Button variant="success" onClick={handleSubmit(enviarDados)}><FaCheck /> Salvar</Button>
-                        <Link className="btn btn-danger" to="/cursos"><FaArrowLeft /> Voltar</Link>
+                        <Link className="btn btn-danger" to="/alunos"><FaArrowLeft /> Voltar</Link>
                     </div>
                 </Form>
             </Box>
