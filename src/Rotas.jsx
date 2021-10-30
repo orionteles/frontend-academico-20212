@@ -14,8 +14,10 @@ const Rotas = () => {
                 <Route exact path="/" component={Curso} />
                 <Route exact path="/cursos" component={Curso} />
                 <Route exact path="/cursos/create" component={CursosForm} />
+                <Route exact path="/cursos/:id" component={CursosForm} />
                 <Route exact path="/alunos" component={Alunos} />
                 <Route exact path="/alunos/create" component={AlunosForm} />
+                <Route exact path="/alunos/:id" component={AlunosForm} />
                 <Route exact path="/professores" component={ProfessoresForm} />
             </Switch>
         </Container>

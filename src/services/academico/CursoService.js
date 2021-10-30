@@ -6,7 +6,8 @@ class CursoService {
     }
 
     get(id) {
-
+        const cursos = this.getAll()
+        return cursos[id]
     }
 
     create(dados) {
@@ -16,12 +17,16 @@ class CursoService {
         localStorage.setItem('cursos', JSON.stringify(cursos))
     }
 
-    update(dados) {
-
+    update(dados, id) {
+        const cursos = this.getAll()
+        cursos.splice(id, 1, dados)
+        localStorage.setItem('cursos', JSON.stringify(cursos))
     }
 
     delete(id) {
-
+        const cursos = this.getAll()
+        cursos.splice(id, 1)
+        localStorage.setItem('cursos', JSON.stringify(cursos))
     }
 }
 
